@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cosmo/bootstrap.min.css" />
+<script src= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+ 
+</head>
+<body>
+<div>
+<h2 >Student Module</h2>
+<tr>
+<div align = "left" >
+<h3><a  th:href="@{'/'}">Add new</a></h3> 
+</div>
+</tr>
+ 
+<div class="col-sm-8" align = "center">
+        <div class="panel-body" align = "center" >
+                
+                
+   <table class="table">
+<thead class="thead-dark">
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Qualification</th>
+            <th>Course</th>
+            <th>Year Of Passing</th>
+            <th>Certificates</th>
+            <th>HallTicket Number </th>
+             <th>edit</th>
+             <th>delete</th>
+   </tr>
+  </thead>
+  <tbody>
+      <tr  th:each=" Students: ${listStudents}">
+<td th:text="${Student.id}">Student ID</td>
+<td th:text="${Student.name}">Student Name</td>
+<td th:text="${Student.qualification}">Qualification </td>
+<td th:text="${Student.Course}">Course</td>
+<td th:text="${Student.YearOfPassing}">Year Of Passing</td>
+<td th:text="${Student.Certificates}">Certificates</td>
+<td th:text="${Student.HallTicketNumber }">HallTicket Number </td>
+
+ 
+<td>
+<a th:href="@{'/Course/edit/' + ${course.id}}">Edit</a>
+</td>     
+<td>
+<a th:href="@{'/Course/delete/' + ${course.id}}">Delete</a>
+</td>     
+</tr>
+  </tbody>
+  </table>                
+</div>
+</div>
+ 
+</tr>
+ 
+</tbody>
+</table>
+<div>
+ 
+</body>
+</html>
